@@ -1,0 +1,12 @@
+<mat-nav-list >
+  <mat-list-item *ngFor="let article of articles$ | async ">
+    <img matListAvatar [src]="article.image" [alt]="article.title" />
+    <h2 matLine>{{ article.title }}</h2>
+    <h4 matLine>{{ article.subtitle }}</h4>
+    <p matLine>{{ article.description }}</p>
+    <div matLine>
+      <span *ngFor="let tag of article.tags">{{ tag }}</span>
+    </div>
+    <p matLine>{{ article.author }}</p>
+  </mat-list-item>
+</mat-nav-list>

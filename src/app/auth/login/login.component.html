@@ -1,0 +1,13 @@
+<ng-container *ngIf="(isEnabled$ | async); else signupTmp">
+  <button>Login</button>
+</ng-container>
+
+<ng-template #signupTmp>
+  <ng-container  *ngIf="!loading; else loadingTmp">
+    <button (click)="signup()">Signup</button>
+  </ng-container>
+</ng-template>
+
+<ng-template #loadingTmp>
+  ...loading
+</ng-template>
